@@ -7,7 +7,7 @@ def uppercase(str):
         else:
             result += char
     print("{}".format(result))
-# Test cases
+# Testing the function with various cases
 uppercase("holberton")
 uppercase("Holberton School")
 uppercase("Holberton School, 98 battery street")
