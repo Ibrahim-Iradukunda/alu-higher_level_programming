@@ -1,16 +1,16 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 def uppercase(str):
     result = ""
     for char in str:
-        if 97 <= ord(char) <= 122:
+        # Check if the character is a lowercase letter
+        if 'a' <= char <= 'z':
+            # Convert to uppercase by adjusting ASCII value
             result += chr(ord(char) - 32)
         else:
+            # Keep the character as is (for uppercase and non-alphabetic characters)
             result += char
+    # Print the result followed by a new line
     print("{}".format(result))
-# Testing the function with various cases
-uppercase("holberton")
-uppercase("Holberton School")
-uppercase("Holberton School, 98 battery street")
-uppercase("")
-uppercase("98")
-uppercase("z")
+# Example usage
+uppercase("best")
+uppercase("Best School 98 Battery street")
