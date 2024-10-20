@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def uppercase(str):
     result = ""
     for char in str:
@@ -6,3 +7,10 @@ def uppercase(str):
         else:
             result += char
     print("{}".format(result))
+# Test cases
+uppercase("holberton")
+uppercase("Holberton School")
+uppercase("Holberton School, 98 battery street")
+uppercase("")
+uppercase("98")
+uppercase("z")
