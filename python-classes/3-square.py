@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Module 3-square
-Defines a class Square with private instance attribute size and validation, and public instance method area.
+Defines a class Square with private instance attribute size and validation.
 """
 
 
