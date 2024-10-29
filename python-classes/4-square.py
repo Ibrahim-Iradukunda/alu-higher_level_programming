@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Module 4-square
-Defines a class Square with a private instance attribute size, a property getter.
+Defines a class Square with a private instance attribute size.
 """
 
 
