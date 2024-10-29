@@ -12,7 +12,7 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """
-        Initializes the square with a private instance attributes size and position.
+        Initializes the square.
         Args:
             size (int): size of the square
             position (tuple): position of the square
