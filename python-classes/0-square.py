@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """
 Module 0-square
@@ -10,3 +9,4 @@ class Square:
     Represents an empty square.
     """
     pass
+
