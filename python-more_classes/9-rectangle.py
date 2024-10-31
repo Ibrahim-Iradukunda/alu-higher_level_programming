@@ -1,7 +1,11 @@
 #!/usr/bin/python3
 """
 Module 9-rectangle
-Defines a class Rectangle.
+Defines a class Rectangle with private instance attributes width and height,
+property getters and setters, public methods area, perimeter, __str__, __repr__,
+a static method to compare rectangles, a class method to create squares, 
+and a message when an instance is deleted. 
+Also, includes class attributes to track the number of instances and the symbol used for printing.
 """
 
 
@@ -14,7 +18,7 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """
-        Initializes the rectangle.
+        Initializes the rectangle with private instance attributes width and height.
         Args:
             width (int): width of the rectangle
             height (int): height of the rectangle
@@ -96,7 +100,7 @@ class Rectangle:
 
     def __str__(self):
         """
-        Returns a strin.
+        Returns a string representation of the rectangle with the character in print_symbol.
         Returns:
             str: string representation of the rectangle
         """
@@ -107,7 +111,7 @@ class Rectangle:
 
     def __repr__(self):
         """
-        Returns a string.
+        Returns a string representation of the rectangle to recreate a new instance.
         Returns:
             str: string representation of the rectangle
         """
@@ -132,3 +136,21 @@ class Rectangle:
         Returns:
             Rectangle: the biggest rectangle based on the area, or rect_1 if equal
         """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        """
+        Returns a new Rectangle instance with width == height == size.
+        Args:
+            size (int): size of the square
+        Returns:
+            Rectangle: new Rectangle instance
+        """
+        return cls(size, size)
