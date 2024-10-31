@@ -93,7 +93,7 @@ class Rectangle:
 
     def __str__(self):
         """
-        Returns a string representation of the rectangle with the character #.
+        Returns a string.
         Returns:
             str: string representation of the rectangle
         """
@@ -103,7 +103,7 @@ class Rectangle:
 
     def __repr__(self):
         """
-        Returns a string representation of the rectangle to recreate a new instance.
+        Returns a string.
         Returns:
             str: string representation of the rectangle
         """
