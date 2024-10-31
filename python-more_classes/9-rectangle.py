@@ -130,7 +130,7 @@ class Rectangle:
         Raises:
             TypeError: if rect_1 or rect_2 is not an instance of Rectangle
         Returns:
-            Rectangle: the biggest rectangle based on the area, or rect_1 if equal
+            Rectangle: the biggest rectangle based on the area.
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
