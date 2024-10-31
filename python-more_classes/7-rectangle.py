@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """
 Module 7-rectangle
-Defines a class Rectangle.
+Defines a class Rectangle with private instance attributes width and height,
+property getters and setters, public methods area, perimeter, __str__, __repr__,
+and a message when an instance is deleted, as well as class attributes to track the number of instances and the symbol used for printing.
 """
 
 
@@ -14,7 +16,7 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """
-        Initializes.
+        Initializes the rectangle with private instance attributes width and height.
         Args:
             width (int): width of the rectangle
             height (int): height of the rectangle
@@ -96,7 +98,7 @@ class Rectangle:
 
     def __str__(self):
         """
-        Returns a string.
+        Returns a string representation of the rectangle with the character in print_symbol.
         Returns:
             str: string representation of the rectangle
         """
@@ -105,4 +107,17 @@ class Rectangle:
         symbol = str(self.print_symbol)
         return "\n".join([symbol * self.__width for _ in range(self.__height)])
 
-    def __repr_
+    def __repr__(self):
+        """
+        Returns a string representation of the rectangle to recreate a new instance.
+        Returns:
+            str: string representation of the rectangle
+        """
+        return f"Rectangle({self.__width}, {self.__height})"
+
+    def __del__(self):
+        """
+        Prints a message when an instance of Rectangle is deleted.
+        """
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
