@@ -1,1 +1,1 @@
-False
+The script will print nothing because there is no print statement included.
