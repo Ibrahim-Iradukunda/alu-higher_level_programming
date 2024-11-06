@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 MyList = __import__('1-my_list').MyList
 
-# Case: class creation, multiple appends, regular print and sorted print
+# Test case: class creation, multiple appends, regular print and sorted print
 my_list = MyList()
 my_list.append(1)
 my_list.append(4)
@@ -12,12 +12,12 @@ print(my_list)
 my_list.print_sorted()
 print(my_list)
 
-# Case: class creation, regular print and sorted print
+# Test case: class creation, regular print and sorted print
 my_list = MyList()
 print(my_list)
 my_list.print_sorted()
 
-# Case: class creation, multiple appends (negative number), regular print and sorted print
+# Test case: class creation, multiple appends (negative number), regular print and sorted print
 my_list = MyList()
 my_list.append(-1)
 my_list.append(3)
