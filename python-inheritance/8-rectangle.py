@@ -11,6 +11,7 @@ class Rectangle(BaseGeometry):
     """
 
 
+
     A class to represent a rectangle, inherits from BaseGeometry.
     """
 
