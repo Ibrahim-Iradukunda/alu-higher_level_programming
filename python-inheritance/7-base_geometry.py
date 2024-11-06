@@ -4,6 +4,7 @@ Module 7-base_geometry
 Defines a class BaseGeometry.
 """
 
+
 class BaseGeometry:
     """
     A class for geometry operations.
@@ -20,8 +21,7 @@ class BaseGeometry:
         Validates that value is an integer and greater than 0.
         Args:
             name (str): The name of the parameter.
-            value (int): The value to validate.
-        
+            value (int): The value to validate.        
         Raises:
             TypeError: If value is not an integer.
             ValueError: If value is less than or equal to 0.
