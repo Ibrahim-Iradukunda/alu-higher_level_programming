@@ -1,0 +1,48 @@
+o>> MyList = __import__('1-my_list').MyList
+>>> MyList = __import__('1-my_list').MyList
+u are not allowed to import any module
+guillaume@ubuntu:~/$ cat 3-main.py
+#!/usr/bin/python3
+is_kind_of_class = __import__('3-is_kind_of_class').is_kind_of_class
+
+a = 1
+if is_kind_of_class(a, int):
+    print("{} comes from {}".format(a, int.__name__))
+if is_kind_of_class(a, float):
+    print("{} comes from {}".format(a, float.__name__))
+if is_kind_of_class(a, object):
+    print("{} comes from {}".format(a, object.__name__))
+
+guillaume@ubuntu:~/$ ./3-main.py
+1 comes from int
+1 comes from object
+guillaume@ubuntu:~/$ 
+
+# Test print_sorted() returns a new list
+>>> my_list = MyList()
+>>> my_list.append(3)
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> original_list_id = id(my_list)
+>>> sorted_list = my_list.print_sorted() # This should not modify my_list
+[1, 2, 3]
+>>> new_list_id = id(sorted_list)
+>>> original_list_id == id(my_list) # Ensure the original list remains the same object
+True
+>>> sorted_list == sorted(my_list)  # Ensure the sorted list is indeed sorted
+True
+
+# Test print_sorted() returns a new list
+>>> my_list = MyList()
+>>> my_list.append(3)
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> original_list_id = id(my_list)
+>>> sorted_list = my_list.print_sorted() # This should not modify my_list
+[1, 2, 3]
+>>> new_list_id = id(sorted_list)
+>>> original_list_id == id(my_list) # Ensure the original list remains the same object
+True
+>>> sorted_list == sorted(my_list)  # Ensure the sorted list is indeed sorted
+True
+
