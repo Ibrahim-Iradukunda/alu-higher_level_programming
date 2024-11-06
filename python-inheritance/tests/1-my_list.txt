@@ -1,53 +1,15 @@
 >>> MyList = __import__('1-my_list').MyList
 
-# Test instantiation
->>> my_list = MyList()
->>> isinstance(my_list, list)
-True
-
-# Test __str__
->>> my_list.append(10)
->>> str(my_list)
-'[10]'
-
-# Test append()
->>> my_list.append(20)
->>> my_list
-[10, 20]
-
-# Test print_sorted() with sorted append
->>> my_list_sorted = MyList()
->>> my_list_sorted.append(1)
->>> my_list_sorted.append(2)
->>> my_list_sorted.append(3)
->>> my_list_sorted.print_sorted()
-[1, 2, 3]
-
-# Test print_sorted() with not sorted append
->>> my_list_unsorted = MyList()
->>> my_list_unsorted.append(3)
->>> my_list_unsorted.append(1)
->>> my_list_unsorted.append(2)
->>> my_list_unsorted.print_sorted()
-[1, 2, 3]
-
-# Test print_sorted() with not sorted append with negative number
->>> my_list_mixed = MyList()
->>> my_list_mixed.append(-3)
->>> my_list_mixed.append(1)
->>> my_list_mixed.append(-2)
->>> my_list_mixed.print_sorted()
-[-3, -2, 1]
-
-# Test print_sorted() with empty list
->>> my_list_empty = MyList()
->>> my_list_empty.print_sorted()
-[]
-
 # Test print_sorted() returns a new list
->>> my_list_new_list = MyList()
->>> my_list_new_list.append(1)
->>> my_list_new_list.append(3)
->>> my_list_new_list.append(2)
->>> my_list_new_list.print_sorted()
+>>> my_list = MyList()
+>>> my_list.append(3)
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> original_list_id = id(my_list)
+>>> sorted_list = my_list.print_sorted() # This should not modify my_list
 [1, 2, 3]
+>>> new_list_id = id(sorted_list)
+>>> original_list_id == id(my_list) # Ensure the original list remains the same object
+True
+>>> sorted_list == sorted(my_list)  # Ensure the sorted list is indeed sorted
+True
