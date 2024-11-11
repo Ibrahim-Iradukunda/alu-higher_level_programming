@@ -8,7 +8,6 @@ Defines a class Student with public instance attributes and a method.
 class Student:
     """
     A class to represent a student.
-    
     Attributes:
         first_name (str): The first name of the student.
         last_name (str): The last name of the student.
