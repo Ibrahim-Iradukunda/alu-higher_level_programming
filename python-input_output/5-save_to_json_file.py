@@ -1,7 +1,7 @@
-	#!/usr/bin/python3
+#!/usr/bin/python3
 """
 Module 5-save_to_json_file
-Defines a function that writes an object
+Defines a function. 
 """
 import json
 
