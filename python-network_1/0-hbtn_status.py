@@ -1,14 +1,15 @@
 #!/usr/bin/python3
-"""A script that
-- fetches http://0.0.0.0:5050/status.
-- uses urllib package
+"""
+This script fetches https://alu-intranet.hbtn.io/status
+using urllib and displays the body of the response.
 """
 
 import urllib.request
 
 if __name__ == '__main__':
-    with urllib.request.urlopen('http://0.0.0.0:5050/status') as res:
-        content = res.read()
+    url = 'https://alu-intranet.hbtn.io/status'
+    with urllib.request.urlopen(url) as response:
+        content = response.read()
         print("Body response:")
         print("\t- type: {}".format(type(content)))
         print("\t- content: {}".format(content))
