@@ -8,7 +8,6 @@ import requests
 
 if __name__ == "__main__":
     url = "http://0.0.0.0:5050/status"
-    
     try:
         response = requests.get(url)
         # Check if the status code is OK (200)
