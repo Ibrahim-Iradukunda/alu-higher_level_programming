@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 """
-This script fetches http://0.0.0.0:5050/status
+This script fetches https://intranet.hbtn.io/status
 using urllib and displays the body of the response.
 """
 
 import urllib.request
+import urllib.error
 
 if __name__ == '__main__':
-    url = 'http://0.0.0.0:5050/status'
+    url = 'https://intranet.hbtn.io/status'
     try:
         with urllib.request.urlopen(url) as response:
             content = response.read()
@@ -16,4 +17,4 @@ if __name__ == '__main__':
             print("\t- content: {}".format(content))
             print("\t- utf8 content: {}".format(content.decode('utf-8')))
     except urllib.error.URLError as e:
-        print(e)
+        print("<urlopen error {}>".format(e.reason))
