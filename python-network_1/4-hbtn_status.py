@@ -16,7 +16,7 @@ if __name__ == "__main__":
             print("\t- type: {}".format(type(response.text)))
             print("\t- content: {}".format(response.text.strip()))
         else:
-            print("Failed to fetch the URL. Status code:", 
+            print("Failed to fetch the URL. Status code:"
                   response.status_code)
     except requests.RequestException as e:
         print("Error during request:", e)
