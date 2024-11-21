@@ -1,15 +1,22 @@
 #!/usr/bin/python3
 """
-This script fetches http://0.0.0.0:5050/status
-using urllib and displays the body of the response.
+Python script that fetches an URL with requests package
 """
 
-import urllib.request
+import requests
 
-if __name__ == '__main__':
-    with urllib.request.urlopen('http://0.0.0.0:5050/status') as res:
-        content = res.read()
-        print("Body response:")
-        print("\t- type: {}".format(type(content)))
-        print("\t- content: {}".format(content))
-        print("\t- utf8 content: {}".format(content.decode('utf-8')))
+
+if __name__ == "__main__":
+    url = "http://0.0.0.0:5050/status"
+    
+    try:
+        response = requests.get(url)
+        # Check if the status code is OK (200)
+        if response.status_code == 200:
+            print("Body response:")
+            print("\t- type: {}".format(type(response.text)))
+            print("\t- content: {}".format(response.text.strip()))
+        else:
+            print("Failed to fetch the URL. Status code:", response.status_code)
+    except requests.RequestException as e:
+        print("Error during request:", e)
