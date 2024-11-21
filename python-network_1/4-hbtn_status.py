@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 """
-This script fetches https://alu-intranet.hbtn.io/status
-using the requests package and displays the body of the response.
+This script fetches http://0.0.0.0:5050/status
+using urllib and displays the body of the response.
 """
 
-import requests
+import urllib.request
 
-if __name__ == "__main__":
-    url = 'https://alu-intranet.hbtn.io/status'
-    response = requests.get(url)
-    content = response.text
-    print("Body response:")
-    print("\t- type: {}".format(type(content)))
-    print("\t- content: {}".format(content))
+if __name__ == '__main__':
+    with urllib.request.urlopen('http://0.0.0.0:5050/status') as res:
+        content = res.read()
+        print("Body response:")
+        print("\t- type: {}".format(type(content)))
+        print("\t- content: {}".format(content))
+        print("\t- utf8 content: {}".format(content.decode('utf-8')))
