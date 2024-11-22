@@ -1,15 +1,22 @@
 #!/usr/bin/python3
 """
-This script fetches https://alu-intranet.hbtn.io/status
-using the requests package and displays the body of the response.
+Python script that fetches an URL with requests package
 """
 
 import requests
 
+
 if __name__ == "__main__":
-    url = 'https://alu-intranet.hbtn.io/status'
-    response = requests.get(url)
-    content = response.text
-    print("Body response:")
-    print("\t- type: {}".format(type(content)))
-    print("\t- content: {}".format(content))
+    url = "http://0.0.0.0:5050/status"
+    
+    try:
+        response = requests.get(url)
+        # Check if the status code is OK (200)
+        if response.status_code == 200:
+            print("Body response:")
+            print("\t- type: {}".format(type(response.text)))
+            print("\t- content: {}".format(response.text.strip()))
+        else:
+            print("Failed to fetch the URL. Status code:", response.status_code)
+    except requests.RequestException as e:
+        print("Error during request:", e)
