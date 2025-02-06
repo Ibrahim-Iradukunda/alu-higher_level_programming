@@ -1,5 +1,6 @@
-const header = document.querySelector('header');
-
-
-header.style.color = '#FF0000';
+$(document).ready(function() {
+  $.get('https://fourtonfish.com/hellosalut/?lang=fr', function(data) {
+    $('#hello').text(data.hello);
+  });
+});
 
